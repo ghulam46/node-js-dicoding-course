@@ -4,6 +4,8 @@ const coffeStock = {
     liberica: 200
 };
 
-module.exports = coffeStock;
+const isCoffeStockReady = true;
+
+module.exports = {coffeStock, isCoffeStockReady}; // menggunakan object literal untuk mengeksport beberapa variable nilai
 
 console.log(module);
