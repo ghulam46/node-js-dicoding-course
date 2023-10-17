@@ -7,16 +7,12 @@
 // console.log("Kopi Anda sudah siap!");
 
 // pemanggilan nilai dari state menggunakan detructuring object
-const {coffeStock, isCoffeStockReady} = require('./state');
+import coffeStock from './state.js';
 
-console.log(isCoffeStockReady, coffeStock);
-
-const makeCoffe = (type, miligrams) => {
-    if(coffeStock[type] >= miligrams) {
-        console.log("kopi berhasil dibuat!");
-    } else {
-        console.log("Biji kopi habis");
+const displayStock = stock => {
+    for(const type in stock) {
+        console.log(type);
     }
 }
 
-makeCoffe('liberica', 100);
+displayStock(coffeStock);

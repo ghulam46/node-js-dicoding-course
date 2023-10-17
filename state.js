@@ -4,8 +4,4 @@ const coffeStock = {
     liberica: 200
 };
 
-const isCoffeStockReady = true;
-
-module.exports = {coffeStock, isCoffeStockReady}; // menggunakan object literal untuk mengeksport beberapa variable nilai
-
-console.log(module);
+export default coffeStock;
