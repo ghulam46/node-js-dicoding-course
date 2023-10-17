@@ -6,7 +6,10 @@
 // console.log("Menuangkan susu ke dalam gelas");
 // console.log("Kopi Anda sudah siap!");
 
-const coffeStock = require('./state');
+// pemanggilan nilai dari state menggunakan detructuring object
+const {coffeStock, isCoffeStockReady} = require('./state');
+
+console.log(isCoffeStockReady, coffeStock);
 
 const makeCoffe = (type, miligrams) => {
     if(coffeStock[type] >= miligrams) {
