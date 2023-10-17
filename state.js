@@ -4,4 +4,6 @@ const coffeStock = {
     liberica: 200
 };
 
-export default coffeStock;
+const isCoffeMachineReady = true;
+
+export {coffeStock, isCoffeMachineReady};

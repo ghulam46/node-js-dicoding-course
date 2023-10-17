@@ -7,7 +7,9 @@
 // console.log("Kopi Anda sudah siap!");
 
 // pemanggilan nilai dari state menggunakan detructuring object
-import coffeStock from './state.js';
+import {coffeStock, isCoffeMachineReady} from './state.js';
+    
+console.log(coffeStock, isCoffeMachineReady);
 
 const displayStock = stock => {
     for(const type in stock) {
