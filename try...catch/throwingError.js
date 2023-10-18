@@ -1,4 +1,5 @@
-const json = '{ "name": "Yoda", "age": 20 }';
+// const json = '{ "name": "Yoda", "age": 20 }';
+const json = '{ bad json }';
 
 try {
     const user = JSON.parse(json);
