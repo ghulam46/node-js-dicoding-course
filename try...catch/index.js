@@ -6,4 +6,6 @@ try {
     console.log('error name: '+ error.name);
     console.log('error message: '+ error.message);
     console.log('error stack: '+ error.stack);
+  } finally {
+    console.log('akan tetap dijalankan!');
   }
