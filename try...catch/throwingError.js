@@ -1,6 +1,6 @@
-// const json = '{ "name": "Yoda", "age": 20 }';
+const json = '{ "name": "Yoda", "age": 20 }';
 // const json = '{ bad json }';
-const json = '{ "age": 20 }';
+// const json = '{ "age": 20 }';
 
 try {
     const user = JSON.parse(json);
@@ -9,9 +9,11 @@ try {
         throw new SyntaxError("'name' is required");
     }
 
+    errorCode;
+
     console.log(user.name);
     console.log(user.age);
 } catch(error) {
-    console.log(error.name);
-    console.log(error.message);
+    // console.log(error.name);
+    console.log(`JSON Error: ${error.message}`);
 }
