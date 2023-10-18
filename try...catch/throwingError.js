@@ -1,6 +1,13 @@
-const json = '{ "name": "Yoda", "age": 20 }';
+// const json = '{ "name": "Yoda", "age": 20 }';
 // const json = '{ bad json }';
-// const json = '{ "age": 20 }';
+const json = '{ "age": 20 }';
+
+class validationError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "ValidationError";
+    }
+}
 
 try {
     const user = JSON.parse(json);
@@ -9,13 +16,19 @@ try {
         throw new SyntaxError("'name' is required");
     }
 
-    errorCode;
+    if(!user.age) {
+        throw new SyntaxError("'age' is required");
+    }
+    
+    // errorCode;
 
     console.log(user.name);
     console.log(user.age);
 } catch(error) {
     if(error instanceof SyntaxError) {
-        console.log(`JSON Error: ${error.message}`);
+        console.log(`JSON Syntax Error: ${error.message}`);
+    } else if(error instanceof validationError) {
+        console.log(`Invalid data: error.message`);
     } else if(error instanceof ReferenceError) {
         console.log(error.message);
     } else {
