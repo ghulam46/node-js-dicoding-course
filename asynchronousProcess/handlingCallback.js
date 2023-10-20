@@ -1,13 +1,23 @@
-function getUsers(callback) {
+function getUsers(isOffline, callback) {
     setTimeout(() => {
         const users = ['John', 'Jack', 'Abigail'];
 
-        callback(users);
+        if(isOffline) {
+            callback(new Error('cannot retrieve  users due offline'));
+            return;
+        }
+
+        callback(null, users);
     }, 3000);
 }
 
-function usersCallback(users) {
-    console.log(users);
+function usersCallback(error, users) {
+    if(error) {
+        console.log('process failed: ', error.message);
+        return;
+    }
+    console.log('process success: ',users);
 }
 
-getUsers(usersCallback);
+getUsers(false, usersCallback);
+getUsers(true, usersCallback);
